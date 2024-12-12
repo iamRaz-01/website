@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <section id="menu" class="common">
+        <nav>
+            <a href="../index.html">
+                <h3>Home</h3>
+            </a>
+            <h3 style="color: rgb(255, 185, 94);">Menu</h3>
+            <a href="./administration.html">
+                <h3>Administration</h3>
+            </a>
+            <a href="./contact.html">
+                <h3>Contact us</h3>
+            </a>
+
+        </nav>
+        <h1>"A Feast of Flavors Awaits You!" </h1>
+        <div id="menuContainer">
+
+
+        </div>
+
+
+
+
+
+    </section>
+    <script>
+        const menuItems = [
+            {
+                imageSrc: './pictures/pizzaHome.jpg',
+                title: 'Pizza',
+                price: 50,
+            },
+            {
+                imageSrc: './pictures/burger.jpg',
+                title: 'Burger',
+                price: 40,
+            },
+            {
+                imageSrc: './pictures/pasta.jpeg',
+                title: 'Pasta',
+                price: 60,
+            },
+            {
+                imageSrc: './pictures/salad.jpg',
+                title: 'Salad',
+                price: 30,
+            },
+            {
+                imageSrc: './pictures/susi.jpeg',
+                title: 'Sushi',
+                price: 80,
+            },
+
+            {
+                imageSrc: './pictures/noodles.jpeg',
+                title: 'Noodles',
+                price: 45,
+            },
+            {
+                imageSrc: './pictures/steak.jpg',
+                title: 'Steak',
+                price: 100,
+            },
+
+            {
+                imageSrc: './pictures/donut.jpeg',
+                title: 'Donut',
+                price: 15,
+            },
+            {
+                imageSrc: './pictures/frenchfries.jpeg',
+                title: 'FrenchFries',
+                price: 40,
+            },
+            {
+                imageSrc: './pictures/wrap.jpeg',
+                title: 'Wrap',
+                price: 60,
+            },
+            {
+                imageSrc: './pictures/frankie.jpeg',
+                title: 'Frankie',
+                price: 80,
+            },
+            {
+                imageSrc: './pictures/briyani.jpeg',
+                title: 'Briyani',
+                price: 130,
+            },
+            {
+                imageSrc: './pictures/friedC.jpeg',
+                title: 'FriedChicken',
+                price: 100,
+            },
+
+            {
+                imageSrc: './pictures/tandoori.jpg',
+                title: 'Tandoori',
+                price: 450,
+            },
+            {
+                imageSrc: './pictures/bbq.jpeg',
+                title: 'BBQ',
+                price: 100,
+            },
+
+            {
+                imageSrc: './pictures/grill.jpeg',
+                title: 'Grill',
+                price: 15,
+            },
+        ];
+
+        menuItems.forEach(createFoodItem);
+
+
+
+        function createFoodItem(item) {
+            // Create the main card div
+            const menuCard = document.createElement('div');
+            menuCard.classList.add('menuCard');
+
+            // Create and set the image element
+            const img = document.createElement('img');
+            img.src = item.imageSrc;
+            img.alt = item.title;
+
+            // Create the content div
+            const content = document.createElement('div');
+            content.classList.add('content');
+
+            // Create and set the title element
+            const heading = document.createElement('h2');
+            heading.textContent = `${item.title} @${item.price}`;
+
+            // Append the heading to content div
+            content.appendChild(heading);
+
+            // Append the image and content div to the card
+            menuCard.appendChild(img);
+            menuCard.appendChild(content);
+
+            // Append the card to the menu container
+            document.getElementById('menuContainer').appendChild(menuCard);
+        }
+
+    </script>
+
+</body>
+
+</html>

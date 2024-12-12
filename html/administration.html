@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <section id="administration" class="common">
+        <nav>
+            <a href="../index.html">
+                <h3>Home</h3>
+            </a>
+            <a href="./menu.html">
+                <h3>Menu</h3>
+            </a>
+            <h3 style="color: rgb(255, 185, 94)">Administration</h3>
+            <a href="./contact.html">
+                <h3>Contact us</h3>
+            </a>
+
+        </nav>
+        <h1>"Meet the Minds Behind the Magic!"</h1>
+        <div id="menuContainer" style="overflow-y: unset;">
+
+
+
+        </div>
+
+        <script>
+
+
+
+            function createPersonCard(person) {
+                const peopleCard = document.createElement('div');
+                peopleCard.classList.add('people');
+
+                const img = document.createElement('img');
+                img.src = person.imageSrc;
+                img.alt = person.name;
+
+                const nameHeading = document.createElement('h2');
+                nameHeading.style.color = 'rgb(255, 185, 94)';
+                nameHeading.textContent = person.name;
+
+                const designationParagraph = document.createElement('p');
+                designationParagraph.textContent = person.designation;
+
+                peopleCard.appendChild(img);
+                peopleCard.appendChild(nameHeading);
+                peopleCard.appendChild(designationParagraph);
+
+                document.getElementById('menuContainer').appendChild(peopleCard);
+            }
+            const people = [
+                {
+                    imageSrc: './pictures/ceo.png',
+                    name: 'John Doe',
+                    designation: 'CEO',
+                },
+                {
+                    imageSrc: './pictures/operations.png',
+                    name: 'Michael Brown',
+                    designation: 'Operations',
+                },
+                {
+                    imageSrc: './pictures/chef.png',
+                    name: 'Jane Smith',
+                    designation: 'Master Cheif',
+                },
+                {
+                    imageSrc: './pictures/mChef.png',
+                    name: 'Alice Johnson',
+                    designation: 'Associate Chief',
+                },
+
+                {
+                    imageSrc: './pictures/master.png',
+                    name: 'Emily Davis',
+                    designation: 'Waiter',
+                },
+                {
+                    imageSrc: './pictures/waiter.png',
+                    name: 'Robert Wilson',
+                    designation: 'Waiter',
+                },
+            ];
+            people.forEach(createPersonCard)
+        </script>
+
+
+</body>
+
+</html>
